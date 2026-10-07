@@ -2,7 +2,7 @@
 
 # 👗 Fashion Retail Sales Performance & Customer Insights
 
-Drive Link - https://drive.google.com/drive/folders/1Q6WQ4t26-kcFcy5Wm9O9TkSDA3Lq8Gw0?usp=sharing
+Project Drive Link - https://drive.google.com/drive/folders/1Q6WQ4t26-kcFcy5Wm9O9TkSDA3Lq8Gw0?usp=sharing
 
 ### 📊 Excel Data Preparation | Power BI Dashboard | Retail Analytics
 
