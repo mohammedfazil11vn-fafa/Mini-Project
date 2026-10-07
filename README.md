@@ -1,144 +1,302 @@
-# Fashion Retail Sales Performance and Customer Insights
+<div align="center">
+
+# 👗 Fashion Retail Sales Performance & Customer Insights
 
 Drive Link - https://drive.google.com/drive/folders/1Q6WQ4t26-kcFcy5Wm9O9TkSDA3Lq8Gw0?usp=sharing
 
-**Microsoft Excel | Power BI | Power Query | DAX**
+### 📊 Excel Data Preparation | Power BI Dashboard | Retail Analytics
 
-## Project Overview
+A data analytics project exploring **sales performance, profitability, products, stores, returns, and customer purchasing behaviour** using Microsoft Excel and Power BI.
 
-This project analyses **50,000 fashion sales transactions from 2020 to 2024** to understand sales performance, product contributions, store results, returns and customer purchasing activity.
+<kbd>Excel</kbd> &nbsp;
+<kbd>Power BI</kbd> &nbsp;
+<kbd>Power Query</kbd> &nbsp;
+<kbd>DAX</kbd> &nbsp;
+<kbd>Data Cleaning</kbd> &nbsp;
+<kbd>Data Visualization</kbd>
 
-Excel was used for data cleaning and processing. Power BI was used to build an interactive dashboard with three pages: **Sales Overview, Products & Stores, and Customer Insights**.
+</div>
 
-The project represents a hypothetical retail case study.
+---
 
-## Project Objectives
+## 📌 Project Overview
 
-- Analyse revenue and estimated gross profit over time.
-- Compare product categories, suppliers and stores.
-- Understand customer purchasing activity.
-- Examine returns and transactions with negative estimated gross profit.
-- Present findings through an interactive dashboard.
-- Recommend business actions based on the results.
+This project analyzes **50,000 fashion retail transactions from January 2020 to December 2024**.
 
-## Tools Used
+The raw data was cleaned and prepared in **Microsoft Excel**, while **Power BI** was used for data modelling, DAX calculations, KPI analysis, and interactive dashboard development.
 
-| Tool | Purpose |
-|---|---|
-| **Microsoft Excel** | Data cleaning, missing-value treatment, lookups, calculations and PivotTable validation |
-| **Power Query** | Importing and preparing tables in Power BI |
-| **Power BI** | Data modelling, dashboard design and interactive visualisation |
-| **DAX** | Calendar table and KPI measures |
+The dashboard helps answer questions such as:
 
-## Dataset
+- How is revenue changing over time?
+- Which product categories generate the most revenue?
+- Which stores perform best?
+- What is the overall return rate?
+- Which customer groups contribute the most transactions?
+- Where are negative-profit transactions occurring?
+
+---
+
+## 🎯 Project Objectives
+
+The main objectives were to:
+
+✔ Clean and prepare raw retail data  
+✔ Handle missing and inconsistent values  
+✔ Create calculated financial fields  
+✔ Analyse revenue and estimated profitability  
+✔ Compare product and store performance  
+✔ Analyse customer purchasing patterns  
+✔ Identify return behaviour  
+✔ Build an interactive Power BI dashboard  
+✔ Generate useful business recommendations  
+
+---
+
+## 🗂️ Dataset
 
 The project uses four related datasets:
 
-| Dataset | Raw Records | Information |
+| Dataset | Records | Main Information |
 |---|---:|---|
-| Sales | 50,000 | Transactions, dates, quantities, discounts and returns |
-| Products | 50,000 | Categories, colours, sizes, suppliers, costs and prices |
-| Customers | 25,000 | Customer IDs, ages, genders, cities and emails |
-| Stores | 5 | Store names, regions and store sizes |
+| Sales | 50,000 | Transactions, quantity, discount & returns |
+| Products | 50,000 | Category, colour, size, supplier, cost & price |
+| Customers | 25,000 | Age, gender, city & email |
+| Stores | 5 | Store name, region & size |
 
-Additional reference records were created for missing customer, product and store identifiers. All 50,000 sales transactions were retained.
+The tables are connected using:
 
-**Source note:** The original dataset publisher and download link have not yet been verified.
+`Product ID` • `Customer ID` • `Store ID`
 
-## Data Cleaning and Processing
+> 🔗 **Dataset Source:** [Add your dataset link here]
 
-### Excel
+---
 
-- Checked missing values, identifiers and duplicate records. No duplicate primary keys were found.
-- Standardised dates, text labels, percentages and currency formats.
-- Applied mean, median or mode imputation to selected missing values.
-- Filled missing discounts with 0% as a project assumption.
-- Added reference records for identifiers missing from related tables.
-- Used product-ID lookups to retrieve unit cost and unit price.
-- Created calculated fields for return status, revenue status, estimated revenue, estimated cost, estimated gross profit and age groups.
-- Flagged products where cost exceeded list price.
-- Created a yearly PivotTable to validate transaction, revenue and gross-profit totals.
+## 🛠️ Tools Used
 
-### Power BI
-
-- Imported the cleaned Excel tables and checked data types.
-- Created relationships between Sales, Products, Customers and Stores.
-- Added a Calendar table for date-based analysis.
-- Created DAX measures for financial performance, transactions, returns and customers.
-- Built three dashboard pages with synchronised slicers, navigation buttons, reset controls and tooltips.
-
-## Dashboard Pages
-
-| Page | Main Content |
+| Tool | Purpose |
 |---|---|
-| **Sales Overview** | Revenue, gross profit, margin, transactions, return rate, monthly performance and category revenue |
-| **Products & Stores** | Recorded units, category revenue and margin, store performance, supplier revenue and category–season comparisons |
-| **Customer Insights** | Identified customers, average units per transaction, revenue per transaction, returns, age groups, gender and customer locations |
+| **Microsoft Excel** | Data cleaning, validation, formulas, lookups & preparation |
+| **Power BI Desktop** | Data modelling, dashboard development & visualization |
+| **Power Query** | Importing cleaned data and checking data types |
+| **DAX** | KPI measures, Calendar table & time analysis |
+| **PivotTable** | Cross-checking Excel and Power BI totals |
 
-The dashboard uses a **16:9 landscape layout** with a consistent colour scheme. Year, Store and Category filters allow users to explore specific selections across all three pages.
+---
 
-## Key Performance Indicators
+## 🧹 Data Cleaning & Preparation
 
-Results cover the complete 2020–2024 dataset with no filters applied.
+The raw datasets required several preparation steps before analysis.
+
+### Key Cleaning Steps
+
+- Preserved separate **Raw** and **Cleaned** worksheets
+- Checked duplicate records
+- Standardized date and number formats
+- Standardized category and supplier names
+- Handled missing discounts
+- Handled unknown Customer IDs
+- Treated missing gender and email values
+- Used **mode and median imputation** where appropriate
+- Added unmatched Product and Store reference records
+- Used **XLOOKUP** to retrieve product cost and price
+- Created Return Status
+- Created Revenue Status
+- Created customer Age Groups
+- Checked pricing exceptions
+- Applied conditional formatting
+- Validated final results
+
+---
+
+## 🧮 Calculated Fields
+
+Several calculated fields were created for analysis.
+
+### Estimated Revenue
+
+`Quantity × Unit Price × (1 − Discount)`
+
+Returned transactions were assigned zero estimated revenue.
+
+### Estimated Cost
+
+`Quantity × Unit Cost`
+
+### Estimated Gross Profit
+
+`Estimated Revenue − Estimated Cost`
+
+Additional fields included:
+
+- Return Status
+- Revenue Status
+- Age Group
+- Price Check
+- Unit Cost
+- Unit Price
+
+---
+
+## 📊 Power BI Dashboard
+
+The final Power BI report contains **3 interactive pages**.
+
+### 01 — Sales Overview
+
+Provides a high-level view of business performance.
+
+**Main KPIs**
+
+- 💰 Estimated Revenue
+- 📈 Estimated Gross Profit
+- 📊 Estimated Gross Margin
+- 🧾 Total Transactions
+- 🔄 Return Rate
+
+**Visuals**
+
+- Monthly Revenue & Gross Profit Trend
+- Revenue by Product Category
+- KPI Cards
+- Year, Store and Category filters
+
+---
+
+### 02 — Products & Stores
+
+Focuses on product and store performance.
+
+**Analysis includes:**
+
+- Category Revenue
+- Category Gross Margin
+- Store Performance
+- Supplier Revenue
+- Category & Season Revenue
+- Recorded Units
+
+---
+
+### 03 — Customer Insights
+
+Explores customer purchasing activity.
+
+**Analysis includes:**
+
+- Identified Customers
+- Average Units per Transaction
+- Estimated Revenue per Transaction
+- Returned Transactions
+- Transactions by Age Group
+- Transactions by Gender
+- Customers by City
+
+---
+
+## 📈 Key Performance Indicators
 
 | KPI | Result |
 |---|---:|
-| Total Transactions | **50,000** |
-| Estimated Revenue | **$11,234,621.25** |
-| Estimated Gross Profit | **$6,434,093.54** |
-| Estimated Gross Margin | **57.27%** |
-| Recorded Units | **125,324** |
-| Identified Purchasing Customers | **21,275** |
-| Returned Transactions | **4,959** |
-| Return Rate | **9.92%** |
-| Estimated Revenue per Transaction | **$224.69** |
-| Average Units per Transaction | **2.51** |
+| 🧾 Total Transactions | **50,000** |
+| 💰 Estimated Revenue | **$11.23M** |
+| 💵 Estimated Cost | **$4.80M** |
+| 📈 Estimated Gross Profit | **$6.43M** |
+| 📊 Estimated Gross Margin | **57.27%** |
+| 📦 Recorded Units | **125,324** |
+| 👥 Identified Customers | **21,275** |
+| ↩️ Returned Transactions | **4,959** |
+| 🔄 Return Rate | **9.92%** |
+| 💳 Revenue / Transaction | **$224.69** |
+| 🛍️ Average Units / Transaction | **2.51** |
 
-## Key Findings
+---
 
-- **Revenue trend:** Estimated revenue peaked at **$2.30 million in 2023**, then declined by **2.09% in 2024**.
-- **Category performance:** Accessories generated the highest revenue at **$2.39 million**, contributing **21.24%** of the total. Revenue was relatively balanced across the five categories.
-- **Store performance:** Lisbon Flagship led estimated revenue at **$2.28 million**, while Faro Outlet led estimated gross profit at **$1.31 million**.
-- **Online contribution:** Online sales generated **$2.21 million**, representing **19.65%** of total estimated revenue.
-- **Returns:** Approximately one in ten transactions was returned. Porto Center recorded a return rate of **10.48%**, above the overall **9.92%**.
-- **Pricing review:** **8,411 transactions**, representing **16.82%** of all transactions, had negative estimated gross profit.
+## 🔍 Key Insights
 
-## Business Recommendations
+### 💰 Revenue Performance
+Revenue remained relatively stable between 2020 and 2024.
 
-| Area | Recommended Action |
+2023 recorded the highest estimated annual revenue, while revenue decreased by approximately **2.09% in 2024**.
+
+### 👕 Product Performance
+**Accessories** generated the highest estimated revenue at approximately **$2.39M**.
+
+However, revenue was relatively balanced across all five product categories.
+
+### 🏬 Store Performance
+**Lisbon Flagship** generated the highest estimated revenue.
+
+**Faro Outlet** generated the highest estimated gross profit.
+
+This shows that store performance should be evaluated using both **revenue and profitability**.
+
+### 🌐 Online Sales
+Online sales generated approximately **$2.21M**, representing around **19.65% of total estimated revenue**.
+
+### 🔄 Returns
+The overall return rate was **9.92%**, representing **4,959 returned transactions**.
+
+### ⚠️ Negative Gross Profit
+Around **16.82% of transactions** produced negative estimated gross profit.
+
+This indicates an opportunity to review:
+
+- Product costs
+- Selling prices
+- Discounts
+- Pricing strategy
+
+### 👥 Customer Insights
+Customers aged **30–59** represented a large share of identified customer transactions.
+
+---
+
+## 💡 Business Recommendations
+
+| Area | Recommendation |
 |---|---|
-| **Pricing** | Check product costs, selling prices and discounts for transactions with negative estimated gross profit. |
-| **Products** | Maintain a balanced product range and test Accessories promotions while monitoring margin and returns. |
-| **Stores** | Compare product mix, discounts and returns across stores to understand performance differences. |
-| **Returns** | Collect return reasons and investigate affected products before deciding on improvements. |
-| **Online Sales** | Test improvements to product descriptions and the online shopping experience. |
-| **Performance Monitoring** | Review monthly revenue, transactions and returns to investigate changes in performance. |
+| 💲 Pricing | Review costs, prices and discounts for loss-making transactions |
+| 👗 Products | Maintain a balanced product mix and test Accessories promotions |
+| 🏬 Stores | Compare high-performing stores and identify successful practices |
+| ↩️ Returns | Investigate return reasons, especially for higher-return areas |
+| 🌐 Online | Improve online product information and recommendations |
+| 👥 Customers | Test targeted promotions for active customer groups |
+| 📊 Monitoring | Track monthly revenue, transactions and return rates |
+| 🧹 Data Quality | Improve customer identification and missing-data collection |
 
-These recommendations have not been implemented or tested as part of the project.
+---
 
-## How to Explore the Project
+## ✅ Data Validation
 
-1. Download the cleaned Excel workbook and Power BI `.pbix` file.
-2. Open the workbook to review the cleaned tables, calculations and yearly summary.
-3. Open the `.pbix` file in Power BI Desktop.
-4. Before refreshing, update the Excel source path to the workbook’s location on your computer.
-5. Explore the dashboard using the Year, Store and Category slicers.
+The main Power BI totals were cross-checked against an Excel yearly PivotTable.
 
-## Assumptions and Limitations
+The following values matched between Excel and Power BI:
 
-- Financial values are estimates based on product catalogue prices and costs.
-- The dollar symbol is a presentation assumption.
-- Gross profit excludes operating expenses and does not represent net profit.
-- Missing-value imputation may affect the results.
-- Returned transactions contribute zero estimated revenue, cost and gross profit, but remain included in transaction and recorded-unit counts.
-- Product season is a catalogue classification and does not establish purchasing seasonality.
-- In the reviewed version, the `C_UNKNOWN` customer’s demographic values still require correction before final age and gender comparisons.
-- The project focuses on historical analysis and does not include forecasting or machine learning.
+- Total Transactions
+- Estimated Revenue
+- Estimated Gross Profit
 
-## Skills Demonstrated
+This helped confirm consistency between the cleaned Excel data and the Power BI model.
 
-**Data cleaning · Missing-value treatment · Excel formulas · Lookups · PivotTables · Data modelling · DAX · Interactive dashboards · Business analysis**
+---
 
-## Author
+> Create an `images` folder in the GitHub repository and upload screenshots of the three dashboard pages using the filenames above.
 
-**Mohammed Fazil**
+---
+
+## 📂 Repository Structure
+
+```text
+Fashion-Retail-Sales-Analytics/
+│
+├── README.md
+│
+├── MINI PROJECT.xlsx
+├── MINI PROJECT.pbix
+├── MINI PROJECT.pdf
+├── MINI PROJECT.docx
+│
+└── images/
+    ├── sales-overview.png
+    ├── products-stores.png
+    └── customer-insights.png
