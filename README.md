@@ -277,11 +277,6 @@ The following values matched between Excel and Power BI:
 
 This helped confirm consistency between the cleaned Excel data and the Power BI model.
 
----
-
-> Create an `images` folder in the GitHub repository and upload screenshots of the three dashboard pages using the filenames above.
-
----
 
 ## 📂 Repository Structure
 
