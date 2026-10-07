@@ -2,6 +2,8 @@
 
 # 👗 Fashion Retail Sales Performance & Customer Insights
 
+Drive Link - https://drive.google.com/drive/folders/1Q6WQ4t26-kcFcy5Wm9O9TkSDA3Lq8Gw0?usp=sharing
+
 ### 📊 Excel Data Preparation | Power BI Dashboard | Retail Analytics
 
 A data analytics project exploring **sales performance, profitability, products, stores, returns, and customer purchasing behaviour** using Microsoft Excel and Power BI.
