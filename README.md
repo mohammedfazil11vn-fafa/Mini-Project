@@ -65,7 +65,7 @@ The tables are connected using:
 
 `Product ID` • `Customer ID` • `Store ID`
 
-> 🔗 **Dataset Source:** [Add your dataset link here]
+> 🔗 **Dataset Source:** https://www.kaggle.com/datasets/vanpatangan/retail-fashion-data?select=store_data.csv
 
 ---
 
